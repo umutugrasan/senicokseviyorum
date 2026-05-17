@@ -313,11 +313,6 @@ body::before {
   justify-content: center;
 }
 
-.qr-code img, .qr-code canvas {
-  display: block;
-  border-radius: 8px;
-}
-
 .hint {
   margin-top: 28px;
   font-family: 'Cormorant Garamond', serif;
@@ -398,9 +393,66 @@ body::before {
   100% { transform: translate(calc(-50% + var(--bx)), calc(-50% + var(--by))) scale(1.2) rotate(var(--br)); opacity: 0; }
 }
 
+/* ───── QR responsive sizing ───── */
+.qr-code {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+.qr-code img, .qr-code canvas {
+  display: block;
+  border-radius: 8px;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 240px;
+}
+
 /* ───── Responsive ───── */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .stage { padding: 28px 16px; }
+  .intro-inner, .gift-inner { width: 100%; }
+  .date-badge { margin-bottom: 28px; }
+  .subtitle { margin-bottom: 32px; }
   .qr-frame { padding: 22px; }
-  .open-btn { padding: 14px 30px; font-size: 14px; }
-  .date-badge { font-size: 11px; letter-spacing: 0.3em; }
+  .signature { margin-top: 28px; }
+  .counter { margin-top: 32px; line-height: 1.7; }
+}
+
+@media (max-width: 480px) {
+  .stage { padding: 22px 14px; }
+  .date-badge { font-size: 11px; letter-spacing: 0.3em; padding: 5px 14px; }
+  .open-btn { padding: 14px 26px; font-size: 14px; letter-spacing: 0.12em; }
+  .qr-frame { padding: 18px; border-radius: 22px; }
+  .qr-corner { font-size: 18px; }
+  .qr-corner.tl { top: 6px; left: 10px; }
+  .qr-corner.tr { top: 6px; right: 10px; }
+  .qr-corner.bl { bottom: 6px; left: 10px; }
+  .qr-corner.br { bottom: 6px; right: 10px; }
+  .hint { font-size: 14px; margin-top: 22px; }
+  .music-toggle { width: 42px; height: 42px; bottom: 16px; right: 16px; }
+  .heart { font-size: 16px !important; }
+}
+
+@media (max-width: 360px) {
+  .qr-frame { padding: 14px; }
+  .open-btn { padding: 12px 22px; font-size: 13px; }
+}
+
+/* Landscape phones — keep everything visible without scroll */
+@media (max-height: 520px) and (orientation: landscape) {
+  .stage { min-height: auto; padding: 24px 20px; }
+  .date-badge { margin-bottom: 14px; }
+  .name { font-size: clamp(48px, 9vh, 80px); }
+  .subtitle { margin-bottom: 18px; }
+  .counter { margin-top: 18px; }
+  .gift-title { font-size: clamp(36px, 7vh, 56px); }
+  .qr-frame { padding: 16px; }
+  .signature { margin-top: 18px; }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .heart, .sparkle, .qr-frame, .open-btn-heart, .name, .date-badge {
+    animation: none !important;
+  }
 }

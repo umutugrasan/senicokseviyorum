@@ -1,6 +1,6 @@
 // ───── Config ─────
 const PDF_FILENAME = 'PEKİ BİZ ŞİMDİ NEYİZ BİRLEŞTİRİLMİŞ.pdf';
-const ANNIVERSARY_START = new Date('2024-05-17T00:00:00');
+const ANNIVERSARY_START = new Date('2024-05-18T00:00:00');
 
 // Compute absolute PDF URL so QR works wherever it's hosted
 function getPdfUrl() {
