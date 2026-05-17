@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ece Tunay'a · 2. Yıldönümümüz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Great+Vibes&family=Inter:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- Floating hearts background -->
+<div class="hearts" aria-hidden="true"></div>
+<div class="sparkles" aria-hidden="true"></div>
+
+<!-- Stage 1: Opening curtain -->
+<section class="stage stage-intro" id="stageIntro">
+  <div class="intro-inner">
+    <div class="date-badge">17 · 05 · 2026</div>
+    <h1 class="title">
+      <span class="line-small">canım</span>
+      <span class="name">Ece Tunay</span>
+    </h1>
+    <p class="subtitle">iki yıldır seninim</p>
+    <button class="open-btn" id="openBtn">
+      <span class="open-btn-text">hediyeni aç</span>
+      <span class="open-btn-heart">♥</span>
+    </button>
+    <div class="counter" id="counter"></div>
+  </div>
+</section>
+
+<!-- Stage 2: Letter + QR -->
+<section class="stage stage-gift hidden" id="stageGift">
+  <div class="gift-inner">
+    <h2 class="gift-title">sana bir kitap yazdım</h2>
+    <p class="gift-sub">telefonunla aşağıdaki kareyi okut, kitabın açılsın</p>
+
+    <div class="qr-frame">
+      <div class="qr-corner tl">♡</div>
+      <div class="qr-corner tr">♡</div>
+      <div class="qr-corner bl">♡</div>
+      <div class="qr-corner br">♡</div>
+      <div id="qrcode" class="qr-code" aria-label="Kitabı açan QR kod"></div>
+    </div>
+
+    <p class="hint">veya istersen <a href="#" id="directLink" class="direct-link">buradan</a> da okuyabilirsin</p>
+
+    <div class="signature">— seni çok seviyorum, Umut</div>
+  </div>
+</section>
+
+<!-- Audio toggle (optional ambient music) -->
+<button class="music-toggle" id="musicToggle" title="müzik" aria-label="müzik aç/kapat">
+  <span id="musicIcon">♪</span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
